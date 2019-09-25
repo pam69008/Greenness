@@ -16,7 +16,7 @@ $menuNavigation = [
     <div class="collapse navbar-collapse text-center" id="navbarNav">
         <ul class="navbar-nav ml-auto mr-auto">
             <?php foreach ($menuNavigation as $menu => $link) {
-                echo "<li><a class ='nav-link' href =$link</a>$menu </li>";
+                echo "<li><a class ='nav-link' href ='$link'>$menu</a> </li>";
             }
             ?>
         </ul>
