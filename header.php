@@ -6,6 +6,7 @@ $pages = [
 ];
 $currentPages = $_SERVER["REQUEST_URI"];
 $title = $pages[$currentPages];
+
 ?>
 <!doctype html>
 <html lang="en">

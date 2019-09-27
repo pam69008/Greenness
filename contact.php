@@ -1,30 +1,27 @@
-
 <?php
-include_once 'header.php';?>
+include 'header.php'; ?>
 <body>
 <?php include 'navbar.php'; ?>
 <?php
+
 $arrayForm = [
     'Nom' => ['Name'],
     'Prénom' => ['lastName'],
     'Email' => ['mail'],
     'Téléphone' => ['phone'],
-
 ];
-
 ?>
 
 <div class="container d-flex flex-column flex-md-column-reverse">
     <section id="form" class="col -6">
         <h2 id="Contact">Contact</h2>
-        <form method="post" target="">
+        <form method="post">
             <div class="row">
                 <?php foreach ($arrayForm as $users => $key) {
-                    echo "<div class= col-6 md-6\">>";
+                    echo "<div class= col-6 md-6\">";
                     echo " <label for= name> $users: </label>";
-                    echo "<input type=text name=$users[0] id=$key[0] class=form-control required>";
+                    echo "<input type=text name=$users[0] id= $key[0] class=form-control>";
                     echo "</div>";
-
                 } ?>
 
                 <div class="col-12">
@@ -32,7 +29,7 @@ $arrayForm = [
                     <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
                 </div>
                 <div class="col-2 offset-10">
-                    <input type="submit" class="btn btn-green float-right" value="Envoyer">
+                    <input type="submit" class="btn btn-green float-right"  name = "valider" value="Envoyer">
                 </div>
             </div>
 </div>
@@ -60,13 +57,10 @@ include 'age_check.php'; ?>
         var features = map.queryRenderedFeatures(e.point, {
             layers: ['greenness'] // replace this with the name of the layer
         });
-
         if (!features.length) {
             return;
         }
-
         var feature = features[0];
-
         var popup = new mapboxgl.Popup({offset: [0, -15]})
             .setLngLat(feature.geometry.coordinates)
             .setHTML('<h3>' + feature.properties.description + '</h3><p>' + feature.properties.address + '</p>')
@@ -85,3 +79,6 @@ include 'age_check.php'; ?>
 
 </body>
 </html>
+<?php
+unset($_SESSION['errors']);
+?>

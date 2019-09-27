@@ -1,4 +1,4 @@
-<?php include_once 'header.php';?>
+<?php include 'header.php';?>
 <body>
 <?php include 'navbar.php'; ?>
 
