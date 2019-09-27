@@ -6,10 +6,7 @@ $menuNavigation = [
     'Contact' => 'contact.php'
 ]
 ?>
-<?php
-$path = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-$current = basename ($path);
-?>
+
 <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
     <a href="index.php"><img class="glogo" src="images/glogo.png" "alt="logo greenness"></a>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
