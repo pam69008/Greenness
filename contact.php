@@ -16,17 +16,18 @@ include 'header.php'; ?>
             <form action="" method="POST">
                 <div class="row">
                     <?php foreach ($arrayForm as $users) {
-                        if (!isset($_POST['$user'])) {
-                            $error = "Attention ! Veuillez rentrer vos informations";
-                        }
-                        echo "<div class= col-12>";
+                        echo "<div class= col-12 >";
                         echo " <label for= name> $users: </label>";
                         echo "<input type=text name=$users[0]  class=form-control>";
                         echo "</div>";
-                        echo "<span class=error>";
-                        echo $error; echo"</span>";
+                        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                            if (empty($_POST['$users'])) {
+                                echo "Veuillez rentrer vos informations";
+                            } else {
+                                header('Location: contact.php');
+                            }
+                        }
                     } ?>
-
 
 
                     <div class="col-12">
