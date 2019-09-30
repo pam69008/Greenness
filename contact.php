@@ -29,7 +29,6 @@ include 'header.php'; ?>
                         }
                     } ?>
 
-
                     <div class="col-12">
                         <label for="message">Message : </label>
                         <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
