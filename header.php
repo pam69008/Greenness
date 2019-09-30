@@ -1,12 +1,5 @@
 <?php
-$pages = [
-    "/index.php"=> "Accueil",
-    "/product.php" => "Produits",
-    "/contact.php" => "Contact",
-];
-$currentPages = $_SERVER["REQUEST_URI"];
-$title = $pages[$currentPages];
-
+include_once 'function.php'
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,7 +8,7 @@ $title = $pages[$currentPages];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <?php echo   "<title> $title </title>"; ?>
+  <?php echo   displayTitre($pages) ; ?>
 
     <link rel="icon" href="images/favicon-96x96.png">
 
