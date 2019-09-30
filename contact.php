@@ -20,7 +20,7 @@ $arrayForm = [
         <form method="post" target="">
             <div class="row">
                 <?php foreach ($arrayForm as $users => $key) {
-                    echo "<div class= col-6 md-6\">>";
+                    echo "<div class= col-6 md-6\">";
                     echo " <label for= name> $users: </label>";
                     echo "<input type=text name=$users[0] id=$key[0] class=form-control required>";
                     echo "</div>";
