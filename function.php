@@ -4,9 +4,6 @@ $menuNavigation = [
     'Accueil' => 'index.php',
     'Produits' => 'product.php',
     'Contact' => 'contact.php',
-
-
-
 ];
 
 /*titre */
@@ -14,16 +11,7 @@ $pages = [
     "/index.php"=> "Accueil",
     "/product.php" => "Produits",
     "/contact.php" => "Contact",
-];
-
-
-/* Tableau Contact */
-
-$arrayForm = [
-    'Nom',
-    "Prénom",
-    'Email',
-    'Télephone',
+    "/succes.php" => "Succes"
 ];
 
 /*fonction titre */
@@ -43,8 +31,15 @@ function navbarOne($tableau)
 
     }
 }
+/*tableau Formulaire */
 
-/* fonction pour formulaire de contact */
+$arrayForm = [
+    'Nom',
+    "Prénom",
+    'Email',
+    'Télephone',
+];
+/* fonction pour ajout d'un champ dans le formulaire*/
 
 function contactTop($tableauTwo)
 {
@@ -55,10 +50,9 @@ function contactTop($tableauTwo)
             if (empty($_POST['$users'])) {
                 echo "Veuillez rentrer vos informations";
             } else {
-                header('Location: contact.php');
+                header('Location: succes.php');
             }
         }
 
     }
 }
-

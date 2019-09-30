@@ -7,7 +7,7 @@ include 'header.php'; ?>
     <div class="container d-flex flex-column flex-md-column-reverse">
         <section id="form" class="col -6">
             <h2 id="Contact">Contact</h2>
-            <form action="" method="POST">
+            <form action="succes.php" method="POST">
                 <div class="row">
                     <div class= col-12 >
                     <?php echo contactTop($arrayForm);?>
