@@ -1,11 +1,11 @@
-<?php include 'header.php';?>
+<?php include_once 'header.php';?>
 <body>
-<?php include 'navbar.php'; ?>
+<?php include_once 'navbar.php'; ?>
 
 <img class="background" src="images/Greenness_bg.jpg" alt="background"></img>
 
 <div class="container">
-    <?php include 'carousel.php'; ?>
+    <?php include_once 'carousel.php'; ?>
 
 
     <!--Bullet Points Section -->

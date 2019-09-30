@@ -1,7 +1,7 @@
 <?php
 include 'header.php';?>
 <body>
-<?php include 'navbar.php'; ?>
+<?php include_once 'navbar.php'; ?>
 
 <img class="beer" src="images/beerbanner.jpg" alt="Beer picture"></img>
 

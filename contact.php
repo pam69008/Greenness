@@ -1,33 +1,18 @@
 <?php
 include 'header.php'; ?>
+<?php include_once 'function.php'; ?>
     <body>
-    <?php include 'navbar.php'; ?>
-    <?php
-
-    $arrayForm = [
-        'Nom', "Prénom", 'Email', 'Télephone'
-    ]
-
-    ?>
+    <?php include_once 'navbar.php'; ?>
 
     <div class="container d-flex flex-column flex-md-column-reverse">
         <section id="form" class="col -6">
             <h2 id="Contact">Contact</h2>
             <form action="" method="POST">
                 <div class="row">
-                    <?php foreach ($arrayForm as $users) {
-                        echo "<div class= col-12 >";
-                        echo " <label for= name> $users: </label>";
-                        echo "<input type=text name=$users[0]  class=form-control>";
-                        echo "</div>";
-                        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                            if (empty($_POST['$users'])) {
-                                echo "Veuillez rentrer vos informations";
-                            } else {
-                                header('Location: contact.php');
-                            }
-                        }
-                    } ?>
+                    <div class= col-12 >
+                    <?php echo contactTop($arrayForm);?>
+                    </div>
+
 
                     <div class="col-12">
                         <label for="message">Message : </label>
@@ -37,6 +22,7 @@ include 'header.php'; ?>
                         <input type="submit" class="btn btn-green float-right" name="valider" value="Envoyer">
                     </div>
                 </div>
+
     </div>
     </form>
     </section>
@@ -45,7 +31,7 @@ include 'header.php'; ?>
         <div id='map'></div>
     </section>
     </div>
-    <?php include 'footer.php';
+    <?php include_once 'footer.php';
     include 'age_check.php'; ?>
 
     <script>

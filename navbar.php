@@ -1,10 +1,6 @@
 <!-- Navbar -->
 <?php
-$menuNavigation = [
-    'Accueil' => 'index.php',
-    'Produits' => 'product.php',
-    'Contact' => 'contact.php'
-]
+include_once 'function.php';
 ?>
 
 <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
@@ -16,9 +12,9 @@ $menuNavigation = [
 
     <div class="collapse navbar-collapse text-center" id="navbarNav">
         <ul class="navbar-nav ml-auto mr-auto">
-            <?php foreach ($menuNavigation as $menu => $link) {
-                echo "<li><a class ='nav-link' href ='$link'>$menu</a> </li>";
-            }
+
+             <?php   echo navbarOne($menuNavigation) ;
+
             ?>
         </ul>
     </div>
