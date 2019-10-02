@@ -53,6 +53,7 @@ $arrayForm = [
 ];
 function errors($tableauTwo)
 {
+
     $nameErrors=[];
         if ($_POST) {
 
