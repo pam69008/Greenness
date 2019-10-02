@@ -5,7 +5,8 @@ include_once 'function.php'?>
 <?php include_once 'navbar.php'; ?>
 
 <div class="confirmation">
-    Nous avons bien reçu votre mail et revenons vers vous au plus vite.
+    <?php var_dump($_GET)?>;
+    <p>Bonjour <?php echo  $_GET['name']. " ".$_GET['prénom'];?></p><p>Nous avons bien reçu votre mail et revenons vers vous au plus vite.</p>
 </div>
 <div style="height: 400px;">
 </div>

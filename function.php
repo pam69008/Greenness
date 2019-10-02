@@ -17,7 +17,8 @@ $pages = [
 /*fonction titre */
 function displayTitre($page)
 {
-    $currentPages = $_SERVER["REQUEST_URI"];
+
+    $currentPages = $_SERVER["SCRIPT_NAME"];
     $title = $page[$currentPages];
     echo "<title> $title </title>";
 
@@ -41,10 +42,18 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
-$nameErrors=[];
+
 $name=$firstname=$email=$phone="";
+/*tableau Formulaire */
+$arrayForm = [
+    'Nom',
+    "Prénom",
+    'Email',
+    'Télephone',
+];
 function errors($tableauTwo)
 {
+    $nameErrors=[];
         if ($_POST) {
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -82,8 +91,9 @@ function errors($tableauTwo)
                 }
 
             }
-            if  (empty($nameErrors)) {
-                header('location: /succes.php');
+            var_dump($nameErrors);
+            if  (isset($nameErrors)) {
+                header('location: /succes.php?name='. $_POST[$tableauTwo[0]].'&prénom='. $_POST[$tableauTwo[1]]);
             }else{
                 foreach ($nameErrors as $key){
                   echo  "<div class='alert alert-danger' role='alert'>";

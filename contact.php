@@ -6,7 +6,7 @@ include 'header.php'; ?>
 
     <div class="container d-flex flex-column flex-md-column-reverse">
         <section id="form" class="col -6">
-            <h2 id="Contact">Contact</h2>
+             <h2 id="Contact">Contact</h2>
             <?php echo errors($arrayForm);?>
             <form action="contact.php" method="POST">
                 <div class="row">
