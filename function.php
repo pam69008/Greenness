@@ -33,10 +33,7 @@ function navbarOne($tableau)
     }
 }
 
-
-
-
-/* fonction pour ajout d'un champ dans le formulaire*/
+/*fonctions message erreurs*/
 function test_input($data)
 {
     $data = trim($data);
@@ -44,51 +41,56 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
-$nameErrors="";
+$nameErrors=[];
 $name=$firstname=$email=$phone="";
 function errors($tableauTwo)
 {
         if ($_POST) {
-            $errors = 0;
+
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if (empty($_POST[$tableauTwo[0]])) {
-                    $nameErrors ="Le nom est invalide ";
-                    $errors++;
+                    $nameErrors[0] ="Le nom est invalide ";
+
 
                 }
 
                 else {
-                    $name = test_input($_POST[$tableauTwo[0]]);
+                    $name= test_input($_POST[$tableauTwo[0]]);
                 }
                 if (empty($_POST[$tableauTwo[1]])) {
-                    $nameErrors = "Le prénom est invalide";
-                    $errors++;
+                    $nameErrors[1]= "Le prénom est invalide";
+
 
 
                 } else {
                     $firstname = test_input($_POST[$tableauTwo[1]]);
                 }
                 if (empty($_POST[$tableauTwo[2]])) {
-                    $nameErrors = "Le mail est invalide";
-                    $errors++;
+                    $nameErrors[2] = "Le mail est invalide";
+
 
                 } else {
                     $email = test_input($_POST[$tableauTwo[2]]);
                 }
                 if (empty($_POST[$tableauTwo[3]])) {
-                    $nameErrors = "Le téléphone est invalide";
-                    $errors++;
+                    $nameErrors[3] = "Le téléphone est invalide";
+
 
                 } else {
                     $phone = test_input($_POST[$tableauTwo[3]]);
                 }
 
             }
-            if (!$nameErrors) {
+            if  (empty($nameErrors)) {
                 header('location: /succes.php');
             }else{
-                echo $nameErrors;
+                foreach ($nameErrors as $key){
+                  echo  "<div class='alert alert-danger' role='alert'>";
+                  echo $key;
+                    echo "<br>";
+                    echo "</div>";
+                }
             }
         }
 
@@ -101,10 +103,12 @@ $arrayForm = [
     'Email',
     'Télephone',
 ];
-
+/* fonction pour ajout d'un champ dans le formulaire*/
 function contactTop($tableauThree){
     foreach($tableauThree as $users){
     echo " <label for= name> $users: </label>";
     echo "<input type=text name=$users  class=form-control>";
 }
 }
+
+
