@@ -91,8 +91,8 @@ function errors($tableauTwo)
                 }
 
             }
-            var_dump($nameErrors);
-            if  (isset($nameErrors)) {
+
+            if  (empty($nameErrors)) {
                 header('location: /succes.php?name='. $_POST[$tableauTwo[0]].'&prénom='. $_POST[$tableauTwo[1]]);
             }else{
                 foreach ($nameErrors as $key){
